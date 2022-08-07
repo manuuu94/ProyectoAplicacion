@@ -1,0 +1,91 @@
+﻿@model  ProyectoAplicacion.Entities.Inventario
+
+@{
+    ViewBag.Title = "Añadir Producto";
+    Layout = "~/Views/Shared/Internal_LayoutNoFooter.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>AñadirProducto</title>
+</head>
+<body>
+    @using (Html.BeginForm("AñadirProducto", "Inventario", FormMethod.Post))
+    {
+        @*@Html.AntiForgeryToken()*@
+
+        <div class="form-horizontal">
+            <h4>Añadir Producto</h4>
+            <hr />
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ID_PRODUCTO, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ID_PRODUCTO, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ID_PRODUCTO, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+            <b>DESCRIPCIÓN:</b>
+            <div class="form-group form-inline">
+                @*@Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                    @*@Html.TextBoxFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <br />
+            <b>PRECIO: ₡</b>
+            <div class="form-group form-inline">
+                @*@Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PRECIO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                    @*@Html.TextBoxFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <br />
+            <b>CANTIDAD DISPONIBLE:</b>
+            <div class="form-group form-inline">
+                @*@Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.CANTIDAD_DISPONIBLE, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                    @*@Html.TextBoxFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })*@
+                </div>
+            </div>
+
+            <br />
+            <b>ID SERVICIO:</b>
+            <div class="form-group form-inline">
+                @*@Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.ID_SERVICIO, new { htmlAttributes = new { @id = "ID_SERVICIO", @class = "form-control", @style = "width:500px" } })
+                    @*@Html.TextBoxFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })*@
+                    1=LAVADO ; 2=TIENDA
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Añadir al Inventario" class="btn btn-default" style="background-color: green; color: white" onclick="return validar();" />
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+</html>
+
+<script src="~/Funciones/Inventario.js"></script>
+<script src="~/Funciones/Generales.js"></script>

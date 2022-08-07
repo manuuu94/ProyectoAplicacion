@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Autolavado</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="page-wrapper chiller-theme toggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <a href="@Url.Action("Index", "Home")">Autolavado</a>
+                    <div id="close-sidebar">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                
+                <div class="sidebar-header">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="https://d29fhpw069ctt2.cloudfront.net/icon/image/37746/preview.svg"
+                             alt="User picture">
+                    </div>
+
+                    @if (Session["RolUsuario"].ToString() == "1")
+                    {
+
+                        <div class="user-info">
+                            <span class="user-name">
+                                @Session["NombreUsuario"]
+                                <strong>@Session["ApellidoUsuario"]</strong>
+                            </span>
+                            <span class="user-role">Administrador</span>
+                            <span class="user-status">
+                                <i class="fa fa-circle"></i>
+                                <span>Online</span>
+                            </span>
+                        </div>
+
+                        <!-- sidebar-header  -->
+
+                        <div class="sidebar-menu">
+                            <ul>
+                                <li class="header-menu">
+                                    <span>General</span>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="far fa-building"></i>
+                                        <span>Inventario</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("ConsultarInventario", "Inventario")">
+                                                    Ver Inventario
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("AñadirProducto", "Inventario")">
+                                                    AñadirProducto
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="@Url.Action("ConsultarRegistroInventario", "Registro")">
+                                                    Registro Inventario
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span>Compras</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+
+                                            <li>
+                                                <a href="@Url.Action("ConsultarCarrito", "Carrito")">
+                                                    Ver Carrito
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("ConsultarRegistroCompras", "Registro")">
+                                                    Registro Compras
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-tachometer-alt"></i>
+                                        <span>Clientes</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Clientes Atendidos</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Opcion 2</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-user"></i>
+                                        <span>Empleados</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Ver Empleados</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Registro Empleado</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-globe"></i>
+                                        <span>Ubicacion</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("Maps", "Home")">Google maps</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-user-gear"></i>
+                                        <span>Configuración</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("cambioContraseña", "Login")">Cambiar constraseña</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li class="header-menu">
+                                    <span>Extra</span>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        <span>Acerca de Nosotros</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-phone"></i>
+                                        <span>Contactanos</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- sidebar-menu  -->
+
+
+                    }
+
+                    else if (Session["RolUsuario"].ToString() == "2")
+                    {
+
+                        <div class="user-info">
+                            <span class="user-name">
+                                @Session["NombreUsuario"]
+                                <strong>@Session["ApellidoUsuario"]</strong>
+                            </span>
+                            <span class="user-role">Empleado Regular</span>
+                            <span class="user-status">
+                                <i class="fa fa-circle"></i>
+                                <span>Online</span>
+                            </span>
+                        </div>
+
+                        <!-- sidebar-header  -->
+
+                        <div class="sidebar-menu">
+                            <ul>
+                                <li class="header-menu">
+                                    <span>General</span>
+                                </li>
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span>Compras</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("ConsultarCarrito", "Carrito")">
+                                                    Ver Carrito
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="far fa-building"></i>
+                                        <span>Inventario</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("ConsultarInventario", "Inventario")">
+                                                Ver Inventario</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-user"></i>
+                                        <span>Empleados</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Ver Empleados</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-globe"></i>
+                                        <span>Ubicacion</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("Maps", "Home")">Google maps</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="header-menu">
+                                    <span>Extra</span>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-book"></i>
+                                        <span>Acerca de Nosotros</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-phone"></i>
+                                        <span>Contactanos</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- sidebar-menu  -->
+
+                    }
+
+
+
+                </div>
+            <!-- sidebar-content  -->
+            <div class="sidebar-footer">
+                <a href="@Url.Action("LogOut", "Login")">
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+        </nav>
+        <!-- sidebar-wrapper  -->
+        <main class="page-content">
+            <div class="container-fluid">
+                @RenderBody()
+
+                <footer class="footer bg-dark text-white">
+
+                    <!-- Social Icons -->
+                    <div class="bg-primary">
+                        <div class="container">
+                            <div class="row py-4">
+                                <div class="col-md-6 col-lg-7">
+                                    <h4 class="mb-0 white-text">Gracias por chinear su nave con nosotros!</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Social Icons -->
+                    <!-- Footer Links -->
+                    <div class="container pt-5 pb-2">
+                        <div class="row">
+
+                            <div class="col-md-3 col-lg-4 col-xl-3">
+                                <h4>AutoLavado</h4>
+                                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </p>
+                            </div>
+
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+                                <h4>Products</h4>
+                                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                                <p><a href="#" class="text-white">Lavado Full</a></p>
+                                <p><a href="#" class="text-white">Lavado Premium</a></p>
+                                <p><a href="#" class="text-white">Lavado Chasis</a></p>
+                                <p><a href="#" class="text-white">Lavado Motor</a></p>
+                            </div>
+
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+                                <h4>Useful links</h4>
+                                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                                <p><a href="#" class="text-white">Inicio</a></p>
+                                <p><a href="#" class="text-white">Acerca de nosotros</a></p>
+                                <p><a href="#" class="text-white">Servicios</a></p>
+                                <p><a href="#" class="text-white">Contacto</a></p>
+                            </div>
+
+                            <div class="col-md-4 col-lg-3 col-xl-3">
+                                <h4>Contact</h4>
+                                <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                                <p><i class="fa fa-home mr-3"></i> Ubicacion</p>
+                                <p><i class="fa fa-envelope mr-3"></i> proyecto@fidelitas.com</p>
+                                <p><i class="fa fa-phone mr-3"></i> 8953 3267</p>
+                                <p><i class="fa fa-print mr-3"></i> 6789 1245</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Footer Links-->
+
+                    <hr class="bg-white mx-4 mt-2 mb-1">
+
+                    <!-- Copyright-->
+                    <div class="mb-2 text-center">
+                        <small>
+                            <a>
+                            © 2022 Proyecto Programacion Avanzada
+                            </a>
+                        </small>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://twitter.com/home" target="_blank" class="twitter-follow-button" data-show-count="false">
+                            <img alt="Twitter Follow" src="https://img.shields.io/twitter/url?label=Twitter&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ffollow%3Fscreen_name%3Dlalinde_carlos" />
+                        </a>
+                    </div>
+                    <br>
+                    <!-- Copyright -->
+
+                </footer>
+
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
