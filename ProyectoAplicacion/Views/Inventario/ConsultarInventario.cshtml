@@ -59,10 +59,12 @@
 
                 <td>
 
-                    <div class="form-group" style="text-align: center;">
+                    <div class="form-group form-inline" style="text-align: center;">
                         @Html.ActionLink("Eliminar", "EliminarProducto", new
                              { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:red;color:white" })
 
+                        @Html.ActionLink("Actualizar", "ConsultarProducto", new
+                             { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:orange;color:white" })
 
                         @*<input type="submit" value="Añadir al Carrito" class="text-center btn2 float-center login_btn">*@
 

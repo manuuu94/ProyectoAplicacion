@@ -99,5 +99,40 @@ namespace ProyectoAplicacion.Models
             }
         }
 
+        public Inventario ConsultarProducto(int ID_PRODUCTO)
+        {
+            using (var cliente = new HttpClient())
+            {
+                string url = ConfigurationManager.AppSettings["urlApiProyecto"].ToString();
+                string metodo = "api/ConsultarProducto?ID_PRODUCTO=" + ID_PRODUCTO;
+                HttpResponseMessage respuesta = cliente.GetAsync(url + metodo).Result;
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    return respuesta.Content.ReadAsAsync<Inventario>().Result;
+                }
+                return null;
+            }
+        }
+
+
+        public bool ActualizarProducto(Inventario producto)
+        {
+            using (var cliente = new HttpClient())
+            {
+                JsonContent info = JsonContent.Create(producto);
+                string url = ConfigurationManager.AppSettings["urlApiProyecto"].ToString();
+                string metodo = "api/ActualizarInventario";
+                HttpResponseMessage respuesta = cliente.PutAsync(url + metodo, info).Result;
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    //return respuesta.Content.ReadAsAsync<carro>().Result;
+                    return true;
+                }
+                return false;
+            }
+        }
+
     }
 }

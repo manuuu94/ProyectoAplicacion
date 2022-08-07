@@ -108,6 +108,29 @@ namespace ProyectoAplicacion.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult ConsultarProducto(int ID_PRODUCTO)
+        {
+            try
+            {
+                var datos = modelo.ConsultarProducto(ID_PRODUCTO);
+                return View(datos);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ActualizarProducto(Inventario producto)
+        {
+            modelo.ActualizarProducto(producto);
+
+            return RedirectToAction("ConsultarInventario", "Inventario");
+
+        }
+
 
 
     }
