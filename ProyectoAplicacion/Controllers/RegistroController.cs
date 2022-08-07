@@ -76,7 +76,20 @@ namespace ProyectoAplicacion.Controllers
         //la vista tiene que estar en registor o redireccionar a carrito
 
 
-
+        [HttpGet]
+        [Route("ConfirmarCompra")]
+        public ActionResult ConfirmarCompra()
+        {
+            try
+            {
+                //modelo.ConfirmarCompra(ID_PROD);
+                return View();
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+        }
 
     }
 }

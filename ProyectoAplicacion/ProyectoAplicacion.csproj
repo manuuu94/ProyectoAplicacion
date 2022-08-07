@@ -254,6 +254,7 @@
     <Content Include="Views\Login\cambioContraseña.cshtml" />
     <Content Include="Views\Inventario\AñadirProducto.cshtml" />
     <Content Include="Views\Inventario\AñadirProducto2.cshtml" />
+    <Content Include="Views\Registro\ConfirmarCompra.cshtml" />
     <Content Include="Views\Carrito\ConfirmarCompra.cshtml" />
   </ItemGroup>
   <ItemGroup>
