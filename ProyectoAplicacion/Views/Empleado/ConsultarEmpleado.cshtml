@@ -1,0 +1,107 @@
+﻿@model  ProyectoAplicacion.Entities.Empleado
+@{
+    ViewBag.Title = "ConsultarEmpleado";
+    Layout = "~/Views/Shared/Internal_LayoutNoFooter.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width" />
+    <title>AñadirProducto</title>
+</head>
+<body>
+    @using (Html.BeginForm("ActualizarEmpleado", "Empleado", FormMethod.Post))
+    {
+
+    <div class="form-horizontal">
+        <h4>Actualizar Empleado</h4>
+        <hr />
+     
+        <b>ID:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_EMPLEADO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px", @readonly = "readonly" } })
+            </div>
+        </div>
+
+
+        <b>NOMBRE:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+            </div>
+        </div>
+
+        <br />
+        <b>PRIMER APELLIDO: </b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.APELLIDO1, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+            </div>
+        </div>
+
+        <br />
+        <b>SEGUNDO APELLIDO:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.APELLIDO2, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+            </div>
+        </div>
+
+        <br />
+        <b>USUARIO:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+            </div>
+        </div>
+
+        <br />
+        <b>CORREO:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.CORREO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+            </div>
+        </div>
+
+        <br />
+        <b>FECHA INGRESO:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FECHA_INGRESO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <br />
+        <b>ID ROL:</b>
+        <div class="form-group form-inline">
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.ID_ROL, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                1=ADMINISTRADOR ; 2=EMPLEADO REGULAR
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Actualizar Empleado" class="btn btn-default" style="background-color:orange" color: white" />
+            </div>
+        </div>
+    </div>
+    }
+
+</body>
+</html>
+
+<script src="~/Funciones/Inventario.js"></script>
+<script src="~/Funciones/Generales.js"></script>
+

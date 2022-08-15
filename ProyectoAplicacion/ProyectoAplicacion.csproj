@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmpleadoModel.cs" />
     <Compile Include="Models\RegistroModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\CarritoModel.cs" />
@@ -257,6 +259,9 @@
     <Content Include="Views\Registro\ConfirmarCompra.cshtml" />
     <Content Include="Views\Carrito\ConfirmarCompra.cshtml" />
     <Content Include="Views\Inventario\ConsultarProducto.cshtml" />
+    <Content Include="Views\Empleado\ConsultarEmpleados.cshtml" />
+    <Content Include="Views\Empleado\ConsultarEmpleado.cshtml" />
+    <Content Include="Views\Empleado\RegistrarEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

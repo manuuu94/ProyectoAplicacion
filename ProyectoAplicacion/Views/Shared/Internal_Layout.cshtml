@@ -111,7 +111,7 @@
                                         <ul>
                                             <li>
                                                 <a href="#">Clientes Atendidos</a>
-                                            </li>                                          
+                                            </li>
                                         </ul>
                                     </div>
                                 </li>
@@ -124,13 +124,19 @@
                                     <div class="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="#">Ver Empleados</a>
+                                                <a href="@Url.Action("ConsultarEmpleados", "Empleado")">
+                                                Ver Empleados</a>
                                             </li>
                                             <li>
-                                                <a href="#">Registro Empleado</a>
+                                                <a href="@Url.Action("RegistrarEmpleado", "Empleado")">
+                                                Registro Empleado</a>
                                             </li>
                                         </ul>
                                     </div>
+                                </li>
+
+                                <li class="header-menu">
+                                    <span>Extra</span>
                                 </li>
 
                                 <li class="sidebar-dropdown">
@@ -161,9 +167,6 @@
                                     </div>
                                 </li>
 
-                                <li class="header-menu">
-                                    <span>Extra</span>
-                                </li>
                             </ul>
                         </div>
                         <!-- sidebar-menu  -->
@@ -217,7 +220,8 @@
                                         <ul>
                                             <li>
                                                 <a href="@Url.Action("ConsultarInventario", "Inventario")">
-                                                Ver Inventario</a>
+                                                    Ver Inventario
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -235,6 +239,11 @@
                                         </ul>
                                     </div>
                                 </li>
+                                
+                                <li class="header-menu">
+                                    <span>Extra</span>
+                                </li>
+
                                 <li class="sidebar-dropdown">
                                     <a href="#">
                                         <i class="fa fa-globe"></i>
@@ -248,8 +257,19 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="header-menu">
-                                    <span>Extra</span>
+
+                                <li class="sidebar-dropdown">
+                                    <a href="#">
+                                        <i class="fa fa-user-gear"></i>
+                                        <span>Configuración</span>
+                                    </a>
+                                    <div class="sidebar-submenu">
+                                        <ul>
+                                            <li>
+                                                <a href="@Url.Action("cambioContraseña", "Login")">Cambiar constraseña</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

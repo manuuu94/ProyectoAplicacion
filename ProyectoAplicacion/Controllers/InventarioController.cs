@@ -72,9 +72,16 @@ namespace ProyectoAplicacion.Controllers
         [HttpGet]
         public ActionResult EliminarProducto(int ID_PRODUCTO)
         {
-            modelo.EliminarProducto(ID_PRODUCTO);
+            try
+            {
+                modelo.EliminarProducto(ID_PRODUCTO);
 
-            return RedirectToAction("ConsultarInventario", "Inventario");
+                return RedirectToAction("ConsultarInventario", "Inventario");
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
 
         }
 
@@ -125,9 +132,15 @@ namespace ProyectoAplicacion.Controllers
         [HttpPost]
         public ActionResult ActualizarProducto(Inventario producto)
         {
-            modelo.ActualizarProducto(producto);
-
-            return RedirectToAction("ConsultarInventario", "Inventario");
+            try
+            {
+                modelo.ActualizarProducto(producto);
+                return RedirectToAction("ConsultarInventario", "Inventario");
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
 
         }
 
