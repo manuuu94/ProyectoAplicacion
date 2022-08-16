@@ -12,7 +12,6 @@ $(document).ready(function () {
 
 });
 
-
 //$(document).ready(function () {
 
 //    let msj = $("#IdMsjUser").val();

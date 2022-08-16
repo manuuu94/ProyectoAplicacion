@@ -212,6 +212,7 @@
     <Content Include="Funciones\Generales.js" />
     <Content Include="Funciones\Carrito.js" />
     <Content Include="Funciones\Login.js" />
+    <Content Include="Funciones\password.js" />
     <Content Include="Funciones\Prueba.js" />
     <Content Include="Funciones\Recuperar.js" />
     <Content Include="Funciones\Inventario.js" />

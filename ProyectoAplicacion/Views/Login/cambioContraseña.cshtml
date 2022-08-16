@@ -36,11 +36,11 @@
             <tbody>
                 <tr>
                     <td> @Html.TextBoxFor(Model => Session["Usuario"], new { @class = "form-control", @readonly = "readonly" }) </td>
-                    <td> @Html.TextBoxFor(Model => Model.PASSWORD, new { @class = "form-control" }) </td>
+                    <td> @Html.TextBoxFor(Model => Model.PASSWORD, new { @class = "form-control", id = "password" }) </td>
 
                     <td>
                         <div class="form-group" style="text-align: center;">
-                            <input style="background-color:red;color:white" type="submit" value="Cambiar Contraseña" class="text-center btn2 float-center login_btn">
+                            <input style="background-color:red;color:white" type="submit" value="Cambiar Contraseña" onclick = "return validarPass();" class="text-center btn2 float-center login_btn">
                         </div>
                     </td>
                 </tr>
@@ -52,3 +52,10 @@
 </body>
 
 </html>
+
+
+@section Scripts
+{
+    <script src="~/Funciones/Generales.js"></script>
+    <script src="~/Funciones/password.js"></script>
+}
