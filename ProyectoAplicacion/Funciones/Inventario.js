@@ -1,19 +1,4 @@
-﻿$(document).ready(function () {
-    $('#tbInventario').DataTable(
-        {
-            "bFilter": true,
-            "bInfo": true,
-            "bLengthChange": true,
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'excel', 'pdf'
-            ]
-        }
-    );
-});
-
-
-
+﻿
 function validar() {
     var number = $('#ID_SERVICIO').val();
 
