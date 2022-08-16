@@ -22,59 +22,111 @@
 
 @*RAZOR*@
 
-<table id="tbInventario" class="table table-bordered table-hover">
+@if (Session["RolUsuario"].ToString() == "1")
+{
 
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Cantidad Disponible</th>
-            @*<th>url</th>*@
-            <th>Servicio</th>
-            <th></th>
+    <table id="tbInventario" class="table table-bordered table-hover">
 
-        </tr>
-    </thead>
 
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <thead>
             <tr>
-                <td> <div class="form-group" style="text-align: center; readonly">@item.ID_PRODUCTO </div></td>
-                <td> <div class="form-group" style="text-align: center; readonly">@item.DESCRIPCION </div></td>
-                <td> <div class="form-group" style="text-align: center; readonly">₡ @item.PRECIO </div></td>
-                <td> <div class="form-group" style="text-align: center; readonly">@item.CANTIDAD_DISPONIBLE </div></td>
-                @*<td> <div class="form-group" style="text-align: center; readonly">@item.URL_IMAGE </div></td>*@
-                <td> <div class="form-group" style="text-align: center; readonly">@item.ID_SERVICIO </div></td>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad Disponible</th>
+                @*<th>url</th>*@
+                <th>Servicio</th>
+                <th></th>
 
-                <!--<td>@Html.TextBoxFor(Model => item.ID_PRODUCTO, new { @class = "form-control", @readonly = "readonly" })</td>
-                <td>@Html.TextBoxFor(Model => item.DESCRIPCION, new { @class = "form-control", @readonly = "readonly" })</td>
-                <td>₡ @Html.TextBoxFor(Model => item.PRECIO, new { @class = "form-control", @readonly = "readonly" })</td>
-                <td>@Html.TextBoxFor(Model => item.CANTIDAD_DISPONIBLE, new { @class = "form-control", @readonly = "readonly" })</td>-->
-                @*<td>@Html.TextBoxFor(Model => item.URL_IMAGE, new { @class = "form-control", @readonly = "readonly" })</td>*@
-                <!--<td>@Html.TextBoxFor(Model => item.ID_SERVICIO, new { @class = "form-control", @readonly = "readonly" })</td>-->
-                @*<td>@Html.TextBoxFor(Model => Model.FirstOrDefault().CANTIDAD, new { @class = "form-control" })</td>*@
-                @*<td><input type="text" id="CANTIDAD" value="1">  </td>*@
-
-                <td>
-
-                    <div class="form-group form-inline" style="text-align: center;">
-                        @Html.ActionLink("Eliminar", "EliminarProducto", new
-                             { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:red;color:white" })
-
-                        @Html.ActionLink("Actualizar", "ConsultarProducto", new
-                             { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:orange;color:white" })
-
-                        @*<input type="submit" value="Añadir al Carrito" class="text-center btn2 float-center login_btn">*@
-
-                    </div>
-                </td>
             </tr>
-        }
+        </thead>
 
-    </tbody>
-</table>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.ID_PRODUCTO </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.DESCRIPCION </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">₡ @item.PRECIO </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.CANTIDAD_DISPONIBLE </div></td>
+                    @*<td> <div class="form-group" style="text-align: center; readonly">@item.URL_IMAGE </div></td>*@
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.ID_SERVICIO </div></td>
+
+                    <!--<td>@Html.TextBoxFor(Model => item.ID_PRODUCTO, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>@Html.TextBoxFor(Model => item.DESCRIPCION, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>₡ @Html.TextBoxFor(Model => item.PRECIO, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>@Html.TextBoxFor(Model => item.CANTIDAD_DISPONIBLE, new { @class = "form-control", @readonly = "readonly" })</td>-->
+                    @*<td>@Html.TextBoxFor(Model => item.URL_IMAGE, new { @class = "form-control", @readonly = "readonly" })</td>*@
+                    <!--<td>@Html.TextBoxFor(Model => item.ID_SERVICIO, new { @class = "form-control", @readonly = "readonly" })</td>-->
+                    @*<td>@Html.TextBoxFor(Model => Model.FirstOrDefault().CANTIDAD, new { @class = "form-control" })</td>*@
+                    @*<td><input type="text" id="CANTIDAD" value="1">  </td>*@
+
+                    <td>
+
+                        <div class="form-group form-inline" style="text-align: center;">
+                            @Html.ActionLink("Eliminar", "EliminarProducto", new
+                       { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:red;color:white" })
+
+                            @Html.ActionLink("Actualizar", "ConsultarProducto", new
+                       { ID_PRODUCTO = item.ID_PRODUCTO }, new { @class = "form-control", @style = "width:80px;height:25px;background-color:orange;color:white" })
+
+                            @*<input type="submit" value="Añadir al Carrito" class="text-center btn2 float-center login_btn">*@
+
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}
+else if (Session["RolUsuario"].ToString() == "2")
+
+{
+    <table id="tbInventario" class="table table-bordered table-hover">
+
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Cantidad Disponible</th>
+                @*<th>url</th>*@
+                <th>Servicio</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.ID_PRODUCTO </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.DESCRIPCION </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">₡ @item.PRECIO </div></td>
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.CANTIDAD_DISPONIBLE </div></td>
+                    @*<td> <div class="form-group" style="text-align: center; readonly">@item.URL_IMAGE </div></td>*@
+                    <td> <div class="form-group" style="text-align: center; readonly">@item.ID_SERVICIO </div></td>
+
+                    <!--<td>@Html.TextBoxFor(Model => item.ID_PRODUCTO, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>@Html.TextBoxFor(Model => item.DESCRIPCION, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>₡ @Html.TextBoxFor(Model => item.PRECIO, new { @class = "form-control", @readonly = "readonly" })</td>
+                    <td>@Html.TextBoxFor(Model => item.CANTIDAD_DISPONIBLE, new { @class = "form-control", @readonly = "readonly" })</td>-->
+                    @*<td>@Html.TextBoxFor(Model => item.URL_IMAGE, new { @class = "form-control", @readonly = "readonly" })</td>*@
+                    <!--<td>@Html.TextBoxFor(Model => item.ID_SERVICIO, new { @class = "form-control", @readonly = "readonly" })</td>-->
+                    @*<td>@Html.TextBoxFor(Model => Model.FirstOrDefault().CANTIDAD, new { @class = "form-control" })</td>*@
+                    @*<td><input type="text" id="CANTIDAD" value="1">  </td>*@
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+}
+
 <br />
 <br />
 <br />
