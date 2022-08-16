@@ -42,6 +42,31 @@ namespace ProyectoAplicacion.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("ConsultarInventario")]
+        public ActionResult ConsultarInventarioEmpleadosRegulares()
+        {
+            try
+            {
+                var datos = modelo.ConsultarInventario();
+                if (datos == null)
+                {
+                    return View("Error");
+                }
+                else
+                {
+                    //ir a la vista
+                    return View(datos);
+
+                }
+
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+        }
+
         [HttpPost]
         public ActionResult AñadirCarrito(Inventario producto)
         {
