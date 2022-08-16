@@ -173,6 +173,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\RegistrosInventario.cs" />
     <Compile Include="Entities\Registros.cs" />
     <Compile Include="Entities\Empleado.cs" />
@@ -262,6 +263,7 @@
     <Content Include="Views\Empleado\ConsultarEmpleados.cshtml" />
     <Content Include="Views\Empleado\ConsultarEmpleado.cshtml" />
     <Content Include="Views\Empleado\RegistrarEmpleado.cshtml" />
+    <Content Include="Views\Registro\ConsultarRegistroClientesAtendidos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

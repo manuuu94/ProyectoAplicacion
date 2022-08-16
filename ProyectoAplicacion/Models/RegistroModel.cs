@@ -64,7 +64,22 @@ namespace ProyectoAplicacion.Models
             }
         }
 
+        public List<Cliente> ConsultarRegistroClientesAtendidos()
+        {
+            using (var cliente = new HttpClient())
+            {
 
+                string url = ConfigurationManager.AppSettings["urlApiProyecto"].ToString();
+                string metodo = "api/ConsultarRegistroClientesAtendidos";
+                HttpResponseMessage respuesta = cliente.GetAsync(url + metodo).Result;
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    return respuesta.Content.ReadAsAsync<List<Cliente>>().Result;
+                }
+                return null;
+            }
+        }
 
 
     }

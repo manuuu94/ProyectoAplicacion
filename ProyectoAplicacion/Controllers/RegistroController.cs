@@ -91,5 +91,27 @@ namespace ProyectoAplicacion.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult ConsultarRegistroClientesAtendidos()
+        {
+            try
+            {
+                var datos = modelo.ConsultarRegistroClientesAtendidos();
+                if (datos == null)
+                {
+                    return View("Error");
+                }
+                else
+                {
+                    return View(datos);
+                }
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+        }
+
+
     }
 }
