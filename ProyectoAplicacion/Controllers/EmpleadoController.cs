@@ -115,7 +115,18 @@ namespace ProyectoAplicacion.Controllers
             }
         }
 
-
+        [HttpGet]
+        public ActionResult VerPerfil()
+        {
+            try
+            {
+                return View();
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+        }
 
 
     }

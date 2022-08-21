@@ -266,6 +266,7 @@
     <Content Include="Views\Empleado\RegistrarEmpleado.cshtml" />
     <Content Include="Views\Registro\ConsultarRegistroClientesAtendidos.cshtml" />
     <Content Include="Views\Inventario\ConsultarInventarioEmpleadosRegulares.cshtml" />
+    <Content Include="Views\Empleado\VerPerfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,7 +47,10 @@ namespace ProyectoAplicacion.Controllers
                 Session["RolUsuario"] = respuesta.ID_ROL;
                 Session["NombreUsuario"] = respuesta.NOMBRE;
                 Session["ApellidoUsuario"] = respuesta.APELLIDO1;
+                Session["Apellido2Usuario"] = respuesta.APELLIDO2;
                 Session["Usuario"] = respuesta.USERNAME;
+                Session["FechaIngresoUsuario"] = respuesta.FECHA_INGRESO;
+                Session["CorreoUsuario"] = respuesta.CORREO;
                 return RedirectToAction("Index", "Home");
             }
             ViewBag.Mensaje = "Credenciales Incorrectos";
