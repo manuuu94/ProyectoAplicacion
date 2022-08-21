@@ -60,7 +60,7 @@ namespace ProyectoAplicacion.Controllers
             try
             {
                 modelo.ActualizarEmpleado(empleado);
-                return RedirectToAction("ConsultarEmpleados", "Empleados");
+                return RedirectToAction("ConsultarEmpleados", "Empleado");
             }
             catch (Exception)
             {

@@ -65,7 +65,7 @@ namespace ProyectoAplicacion.Controllers
             try
             {
                 modelo.ConfirmarCompra(registro);
-                return View();
+                return RedirectToAction("ConsultarInventario", "Inventario");
             }
             catch (Exception)
             {
