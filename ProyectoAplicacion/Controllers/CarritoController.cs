@@ -20,14 +20,14 @@ namespace ProyectoAplicacion.Controllers
             try
             {
                 var datos = modelo.ConsultarCarrito();
-                if (datos == null)
-                {
-                    return View("Error");
-                }
-                else
-                {
+                //if (datos == null)
+                //{
+                //    return View("Error");
+                //}
+                //else
+                //{
                     return View(datos);
-                }
+                //}
             }
             catch (Exception)
             {
@@ -72,6 +72,8 @@ namespace ProyectoAplicacion.Controllers
         {
             try
             {
+
+
                 //modelo.ConfirmarCompra(ID_PROD);
                 return View();
             }

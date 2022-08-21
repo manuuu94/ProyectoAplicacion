@@ -1,9 +1,7 @@
-﻿
-function Cantidad() {
-    
-    var test = document.getElementById("CANTIDAD").value;
+﻿function validar() {
+    var test = "prueba";
 
     alert(test);
     return test;
- }
+};
 

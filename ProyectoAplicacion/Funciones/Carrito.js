@@ -11,3 +11,13 @@
         }
     );
 });
+
+
+function validar() {
+    var test = document.getElementById("id_prod");
+    if (test == null) {
+        alert(test);
+        return false;
+    }
+    return true;
+};

@@ -28,24 +28,6 @@ namespace ProyectoAplicacion.Models
             }
         }
 
-        //incompleto
-        public string EliminarDeCarrito()
-        {
-            using (var cliente = new HttpClient())
-            {
-
-                string url = ConfigurationManager.AppSettings["urlApiProyecto"].ToString();
-                string metodo = "api/EliminarProductoCarrito";
-                HttpResponseMessage respuesta = cliente.GetAsync(url + metodo).Result;
-
-                if (respuesta.IsSuccessStatusCode)
-                {
-                    return "Elimnado del carrito";
-                }
-                return null;
-            }
-        }
-
         public bool VaciarCarrito()
         {
             using (var cliente = new HttpClient())
