@@ -16,7 +16,7 @@
 function validar() {
     var test = document.getElementById("id_prod");
     if (test == null) {
-        alert(test);
+        MostrarAlerta("CARRITO VACIO", 'error');
         return false;
     }
     return true;
