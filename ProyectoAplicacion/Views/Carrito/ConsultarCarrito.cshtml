@@ -67,18 +67,22 @@
             </tr>
         </thead>
         <tbody>
-                <tr>
-                    <td>
-                        @Html.ActionLink("Vaciar Carrito", "VaciarCarrito", new { }, new
+            <tr>
+                <td>
+                    @Html.ActionLink("Vaciar Carrito", "VaciarCarrito", new { }, new
 { @class = "form-control", @style = "text-align:center;width:auto; height:25px;background-color:red;color:white" })
-                    </td>
-                    <td>
-                        @Html.ActionLink("Confirmar Compra", "ConfirmarCompra", new { }, new
-                   { @class = "form-control", @style = "text-align:center;width:auto; height:25px;background-color:green;color:white"
-                   , onclick= "return validar();"})
-                    </td>
-                </tr>
-            
+                </td>
+                <td>
+                    @Html.ActionLink("Confirmar Compra", "ConfirmarCompra", new { }, new
+               {
+                        @class = "form-control",
+                        @style = "text-align:center;width:auto; height:25px;background-color:green;color:white"
+               ,
+                        onclick = "return validar();"
+                    })
+                </td>
+            </tr>
+
         </tbody>
     </table>
 
@@ -87,6 +91,7 @@
 @section Scripts
 {
     <script src="~/Funciones/Carrito.js"></script>
+    <script src="~/Funciones/Generales.js"></script>
     <script src="//code.jquery.com/jquery-3.5.1.js"></script>
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script src="//cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
