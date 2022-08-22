@@ -12,6 +12,7 @@ namespace ProyectoAplicacion.Controllers
     public class LoginController : Controller
     {
         LoginModel modelo = new LoginModel();
+        CarritoModel modelocarrito = new CarritoModel();
 
         [HttpGet]
         public ActionResult Index()
@@ -23,7 +24,7 @@ namespace ProyectoAplicacion.Controllers
         [HttpGet]
         public ActionResult LogOut()
         {
-
+            modelocarrito.VaciarCarrito();
             Session.Clear(); 
             Session.Abandon();
 

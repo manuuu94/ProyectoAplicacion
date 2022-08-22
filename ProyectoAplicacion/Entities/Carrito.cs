@@ -14,5 +14,9 @@ namespace ProyectoAplicacion.Entities
         public decimal TOTAL { get; set; }
         public int ID_PRODUCTO { get; set; }
 
+        //public int ID { get; set; }
+
+        public decimal TOTAL_CARRITO { get; set; }
+
     }
 }
