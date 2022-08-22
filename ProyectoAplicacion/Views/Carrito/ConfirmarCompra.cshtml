@@ -22,76 +22,76 @@
     @using (Html.BeginForm("ConfirmarCompra", "Registro", FormMethod.Post))
     {
 
-    <div class="form-horizontal">
-        <h4>Registros</h4>
-        <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_COMPRA, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_COMPRA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ID_COMPRA, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <h4>Registros</h4>
+            <hr />
+            @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ID_COMPRA, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ID_COMPRA, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ID_COMPRA, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            <b>CÉDULA:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.CEDULA_CLIENTE, new { htmlAttributes = new { @id = "CEDULA_CLIENTE", @class = "form-control", @style = "width:250px" } })
+                </div>
             </div>
-        </div>*@
 
-        <b>CÉDULA:</b>
-        <div class="form-group form-inline">
+            <b>NOMBRE COMPLETO:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NOMBRE_CLIENTE, new { htmlAttributes = new { @class = "form-control", @style = "width:500px;" } })
+                </div>
+            </div>
 
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CEDULA_CLIENTE, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            <b>CORREO:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CORREO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                </div>
+            </div>
+
+            <b>TELÉFONO:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.TELEFONO, new { htmlAttributes = new {@id= "TELEFONO", @class = "form-control", @style = "width:250px" } })
+                </div>
+            </div>
+
+
+            <b>MÉTODO PAGO:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.ID_METODO, new { htmlAttributes = new { @id = "ID_METODO", @class = "form-control", @style = "width:100px" } })
+                    @*<br />*@ 1=EFECTIVO ; 2=CRÉDITO
+                </div>
+            </div>
+
+            <b>ID EMPLEADO:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.ID_EMPLEADO, new { htmlAttributes = new {@id = "ID_EMPLEADO", @class = "form-control", @style = "width:100px" } })
+                </div>
+            </div>
+
+            <b>TOTAL COMPRA:</b>
+            <div class="form-group form-inline">
+                <div class="col-md-10">
+                    ₡ @Session["TOTALCOMPRA"]
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Confirmar Compra" class="btn btn-default" style="background-color: green; color: white"
+                           onclick="return validar();" />
+                </div>
             </div>
         </div>
-
-        <b>NOMBRE COMPLETO:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NOMBRE_CLIENTE, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
-            </div>
-        </div>
-
-        <b>CORREO:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CORREO, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
-            </div>
-        </div>
-
-        <b>TELÉFONO:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TELEFONO, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
-            </div>
-        </div>
-
-
-        <b>MÉTODO PAGO:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_METODO, new { htmlAttributes = new { @class = "form-control", @style = "width:100px" } })
-                1=EFECTIVO ; 2=CRÉDITO
-            </div>
-        </div>
-
-        <b>ID EMPLEADO:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ID_EMPLEADO, new { htmlAttributes = new { @class = "form-control", @style = "width:100px" } })
-            </div>
-        </div>
-
-        <b>TOTAL COMPRA:</b>
-        <div class="form-group form-inline">
-            <div class="col-md-10">
-                ₡ @Session["TOTALCOMPRA"]
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Confirmar Compra" class="btn btn-default" style="background-color: green; color: white" />
-            </div>
-        </div>
-    </div>
     }
 
     @*<div>
@@ -99,3 +99,7 @@
         </div>*@
 </body>
 </html>
+
+
+<script src="~/Funciones/confirma.js"></script>
+<script src="~/Funciones/Generales.js"></script>
