@@ -30,28 +30,28 @@
             <div class="form-group form-inline">
 
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+                    @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control", @style = "width:250px", required = "required" } })
                 </div>
             </div>
 
             <b>PRIMER APELLIDO:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.APELLIDO1, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                    @Html.EditorFor(model => model.APELLIDO1, new { htmlAttributes = new { @class = "form-control", @style = "width:500px", required = "required" } })
                 </div>
             </div>
 
             <b>SEGUNDO APELLIDO:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.APELLIDO2, new { htmlAttributes = new { @class = "form-control", @style = "width:500px" } })
+                    @Html.EditorFor(model => model.APELLIDO2, new { htmlAttributes = new { @class = "form-control", @style = "width:500px", required = "required" } })
                 </div>
             </div>
 
             <b>USUARIO:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+                    @Html.EditorFor(model => model.USERNAME, new { htmlAttributes = new { @class = "form-control", @style = "width:250px", required = "required" } })
                 </div>
             </div>
 
@@ -59,21 +59,21 @@
             <b>CONTRASEÑA:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.PasswordFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control", @style = "width:100px" } })
+                    @Html.PasswordFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control", @style = "width:100px", required = "required" } })
                 </div>
             </div>
 
             <b>CORREO:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.CORREO, new { htmlAttributes = new { @class = "form-control", @style = "width:100px" } })
+                    @Html.EditorFor(model => model.CORREO, new { htmlAttributes = new { @class = "form-control", @style = "width:100px", required = "required" } })
                 </div>
             </div>
 
             <b>ID ROL:</b>
             <div class="form-group form-inline">
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ID_ROL, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+                    @Html.EditorFor(model => model.ID_ROL, new { htmlAttributes = new { @class = "form-control", @style = "width:250px", required = "required" } })
                     1=ADMINISTRADOR ; 2=EMPLEADO REGULAR
                 </div>
             </div>
