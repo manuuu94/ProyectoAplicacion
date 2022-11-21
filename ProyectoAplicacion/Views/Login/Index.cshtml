@@ -51,13 +51,13 @@
                         </div>
 
                         <div class="form-group" style="text-align: center;">
-                            <input type="submit" value="Iniciar sesion" class=" text-center btn float-center login_btn">
+                            <input type="submit" name = "login" value="Iniciar sesion" class=" text-center btn float-center login_btn">
                         </div>
                     }
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center">
-                        <a @Html.ActionLink("Olvidé contraseña", "ResetPass", "Login", new { @class = "elements" }) </a>
+                        <a @Html.ActionLink("Olvidé contraseña", "ResetPass", "Login", new { @class = "elements", @name= "forgot" }) </a>
                     </div>
                 </div>
             </div>
