@@ -70,7 +70,7 @@
                                             </li>
 
                                             <li>
-                                                <a href="@Url.Action("ConsultarRegistroInventario", "Registro")">
+                                                <a href="@Url.Action("ConsultarRegistroInventario", "Registro")" name="ver registro inventario">
                                                     Registro Inventario
                                                 </a>
                                             </li>
@@ -81,19 +81,19 @@
 
                                 <li class="sidebar-dropdown">
                                     <a href="#">
-                                        <i class="fa fa-shopping-cart"></i>
+                                        <i class="fa fa-shopping-cart" name="compras"></i>
                                         <span>Compras</span>
                                     </a>
                                     <div class="sidebar-submenu">
                                         <ul>
 
                                             <li>
-                                                <a href="@Url.Action("ConsultarCarrito", "Carrito")">
+                                                <a href="@Url.Action("ConsultarCarrito", "Carrito")" name="ver carrito">
                                                     Ver Carrito
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="@Url.Action("ConsultarRegistroCompras", "Registro")">
+                                                <a href="@Url.Action("ConsultarRegistroCompras", "Registro")" name="ver compras">
                                                     Registro Compras
                                                 </a>
                                             </li>
@@ -104,13 +104,13 @@
 
                                 <li class="sidebar-dropdown">
                                     <a href="#">
-                                        <i class="fa fa-tachometer-alt"></i>
+                                        <i class="fa fa-tachometer-alt" name="clientes"></i>
                                         <span>Clientes</span>
                                     </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="@Url.Action("ConsultarRegistroClientesAtendidos", "Registro")">
+                                                <a href="@Url.Action("ConsultarRegistroClientesAtendidos", "Registro")" name="ver clientes">
                                                 Clientes Atendidos</a>
                                             </li>
                                         </ul>
@@ -119,17 +119,17 @@
 
                                 <li class="sidebar-dropdown">
                                     <a href="#">
-                                        <i class="fa fa-user"></i>
+                                        <i class="fa fa-user" name="empleados"></i>
                                         <span>Empleados</span>
                                     </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="@Url.Action("ConsultarEmpleados", "Empleado")">
+                                                <a href="@Url.Action("ConsultarEmpleados", "Empleado")" name="ver empleados">
                                                 Ver Empleados</a>
                                             </li>
                                             <li>
-                                                <a href="@Url.Action("RegistrarEmpleado", "Empleado")">
+                                                <a href="@Url.Action("RegistrarEmpleado", "Empleado")" name="registrar empleados">
                                                 Registro Empleado</a>
                                             </li>
                                         </ul>
@@ -142,13 +142,13 @@
 
                                 <li class="sidebar-dropdown">
                                     <a href="#">
-                                        <i class="fa fa-globe"></i>
+                                        <i class="fa fa-globe" name="ubicacion"></i>
                                         <span>Ubicacion</span>
                                     </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="@Url.Action("Maps", "Home")">Google maps</a>
+                                                <a href="@Url.Action("Maps", "Home")" name="ver ubicacion" >Google maps</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -156,16 +156,16 @@
 
                                 <li class="sidebar-dropdown">
                                     <a href="#">
-                                        <i class="fa fa-user-gear"></i>
+                                        <i class="fa fa-user-gear" name="configuracion"></i>
                                         <span>Configuración</span>
                                     </a>
                                     <div class="sidebar-submenu">
                                         <ul>
                                             <li>
-                                                <a href="@Url.Action("cambioContraseña", "Login")">Cambiar constraseña</a>
+                                                <a href="@Url.Action("cambioContraseña", "Login")" name="cambiar contraseña">Cambiar constraseña</a>
                                             </li>
                                             <li>
-                                                <a href="@Url.Action("VerPerfil", "Empleado")">Ver perfi</a>
+                                                <a href="@Url.Action("VerPerfil", "Empleado")" name="ver perfil">Ver perfi</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -293,7 +293,7 @@
             <!-- sidebar-content  -->
             <div class="sidebar-footer">
                 <a href="@Url.Action("LogOut", "Login")">
-                    <i class="fa fa-power-off"></i>
+                    <i class="fa fa-power-off" name="logout"></i>
                 </a>
             </div>
         </nav>
